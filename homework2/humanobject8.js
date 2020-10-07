@@ -4,8 +4,6 @@
 // 3. When setting the value of the dateOfBirth property, it must also the age property is set depending on the difference between the year of birth and the current year
 
 const human = Object.create( {}, {
-	// firstName: {value:'Alex'},
-	// lastName: {value:'Smith'},
 	fullName: {
 		set: function(fullname) {
 			[this.firstName, this.lastName] = fullname.split(' ');
