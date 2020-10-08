@@ -2,5 +2,5 @@
 
 const arr = [2, 5, 7, 3, 6, 8];
 
-const randomSortedArr = arr.sort((prev, next) => Math.random() * 10 - Math.random() * 10);
+const randomSortedArr = arr.sort((prev, next) => Math.random() - Math.random());
 console.log(randomSortedArr);

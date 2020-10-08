@@ -16,6 +16,9 @@ const human = Object.create( {}, {
 		set: function (year) {
 			this.year = year;
 			this.age = new Date().getFullYear() - this.year;
+		},
+		get() {
+			return this.age;
 		}
 	}
 
@@ -23,4 +26,4 @@ const human = Object.create( {}, {
 human.fullName = 'Alex Smith';
 console.log('Full name - ', human.fullName);
 human.dateOfBirth = 1972;
-console.log('age = ', human.age);
+console.log('age = ', human.dateOfBirth);
