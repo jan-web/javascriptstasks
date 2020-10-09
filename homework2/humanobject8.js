@@ -4,8 +4,6 @@
 // 3. When setting the value of the dateOfBirth property, it must also the age property is set depending on the difference between the year of birth and the current year
 
 const human = Object.create( {}, {
-	// firstName: {value:'Alex'},
-	// lastName: {value:'Smith'},
 	fullName: {
 		set: function(fullname) {
 			[this.firstName, this.lastName] = fullname.split(' ');
@@ -18,6 +16,9 @@ const human = Object.create( {}, {
 		set: function (year) {
 			this.year = year;
 			this.age = new Date().getFullYear() - this.year;
+		},
+		get() {
+			return this.age;
 		}
 	}
 
@@ -25,4 +26,4 @@ const human = Object.create( {}, {
 human.fullName = 'Alex Smith';
 console.log('Full name - ', human.fullName);
 human.dateOfBirth = 1972;
-console.log('age = ', human.age);
+console.log('age = ', human.dateOfBirth);
