@@ -14,15 +14,14 @@
 
 
 function cache() {
-	let num1;
-	let num2;
-	let result;
-
+	const cacheData = {};
 	return (x, y)=>{
-		if(x === num1 && y === num2 || x === num2 && y === num1){
-			return { value: result, fromCache: true}
+		let key = [x, y];
+		if(key in cacheData){
+			return { value: cacheData[key], fromCache: true}
 		} else {
-			return { value: result = Math.pow(num1=x, num2=y), fromCache: false}
+			cacheData[key] = Math.pow(x,y);
+			return { value: cacheData[key], fromCache: false}
 		}
 	};
 }
@@ -31,8 +30,10 @@ const calculate = cache();
 
 console.log(calculate(3, 3)); // { value: 27, fromCache: false}
 console.log(calculate(2, 10)); // { value: 1024, fromCache: false}
-console.log(calculate(2, 10)); // { value: 1024, fromCache: true}
 console.log(calculate(-2, -3)); // { value: -0.125, fromCache: false }
+console.log(calculate(2, 10)); // { value: 1024, fromCache: true}
 console.log(calculate(0, 0)); // { value: 1, fromCache: false }
 
-// Всё работает как часы!
+
+
+
