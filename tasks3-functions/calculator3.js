@@ -20,15 +20,15 @@
 // calculator.history() // []
 
 function Calc () {
-	const archiv = [];
-	const baza = [['+', (a, b) => a + b],
+	const archive = [];
+	const base= [['+', (a, b) => a + b],
 				  ['-', (a, b) => a - b]
 				];
 
 	function calculation (op, num1, num2){
-		for(let i=0; i<baza.length; i++){
-			if(baza[i][0] == op) {
-				console.log((baza[i][1])(num1,num2));
+		for(let i=0; i<base.length; i++){
+			if(base[i][0] == op) {
+				console.log((base[i][1])(num1,num2));
 				break;
 			}
 		}
@@ -36,17 +36,17 @@ function Calc () {
 
 	this.operation = (str) =>{
 		const [num1, op, num2] = str.split(' ');
-		archiv.push({operation: op, operands: num1, num2});
+		archive.push({operation: op, operands: num1, num2});
 		return calculation(op, Number(num1), Number(num2));
 	};
 	this.addOperation = (str, func) => {
-		baza.push([str, func]);
+		base.push([str, func]);
 	};
 	this.history = () => {
-		console.log(archiv);
+		console.log(archive);
 	};
 	this.clearHistory = () => {
-		archiv.splice(0, archiv.length);
+		archive.splice(0, archive.length);
 	};
 }
 
