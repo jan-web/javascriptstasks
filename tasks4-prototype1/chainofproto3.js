@@ -5,6 +5,26 @@
 
 // Есть следующий объект, в котором свойства лежат кучей:
 
+// const john = {
+//   name: "John",
+//   lastName: "Smith",
+//   position: "Senior engineer",
+//   startDate: "10.10.1990",
+//   endDate: "10.10.2000",
+//   baseSalary: "10000",
+//   salaryCurrency: "$",
+//   location: "Russia",
+//   department: "IT",
+//   phoneNumber: "+1234567890",
+//   eat: function() {},
+//   sleep: function() {},
+//   callFriend: function() {},
+//   writeReport: function() {},
+//   organizeMeeting: function () {},
+//   retire: function () {},
+//   startVacation: function () {}
+// };
+
 function Human (name, lastName) {
   this.name = name;
   this.lastName = lastName;
